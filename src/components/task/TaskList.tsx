@@ -1,11 +1,11 @@
 // components/TaskList.tsx
 
-import Task, { Status } from '@/models/Task.model';
+import TaskModel, { Status } from '@/models/Task.model';
 import React from 'react';
 import TaskColumn from './TaskColumn';
 
 type TaskListProps = {
-  tasks: Task[];
+  tasks: TaskModel[];
   onDeleteTask: (taskId: number) => void;
   onMoveTask: (taskId: number, newStatus: Status) => void;
 };

@@ -21,6 +21,13 @@ const Navbar: React.FC = () => {
           >
             Tasks
           </Link>
+          <Link
+            href="/taskcontext"
+            className="text-white hover:text-gray-300"
+            passHref
+          >
+            Tasks With Context
+          </Link>
           {/* Add more links as needed */}
         </div>
       </div>

@@ -1,10 +1,10 @@
 // components/TaskForm.tsx
 
-import Task from '@/models/Task.model';
+import TaskModel from '@/models/Task.model';
 import React, { useState } from 'react';
 
 type TaskFormProps = {
-  onAddTask: (newTask: Task) => void;
+  onAddTask: (newTask: TaskModel) => void;
 };
 
 const TaskForm: React.FC<TaskFormProps> = ({ onAddTask }) => {
@@ -17,7 +17,7 @@ const TaskForm: React.FC<TaskFormProps> = ({ onAddTask }) => {
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     if (taskTitle.trim() !== '') {
-      const newTask: Task = {
+      const newTask: TaskModel = {
         id: Date.now(), // Generate unique ID for the new task
         title: taskTitle.trim(),
         status: 'todo',

@@ -1,14 +1,13 @@
 // components/TaskColumn.tsx
 
-import Task, { Status } from '@/models/Task.model';
+import TaskModel, { Status } from '@/models/Task.model';
 import React, { useState } from 'react';
-import Button from '../shared/Button';
-import TaskComponent from './Task';
 import ConfirmationModal from '../shared/Modal'; // Assuming you have a Modal component
+import TaskComponent from './Task';
 
 type TaskColumnProps = {
   title: string;
-  tasks: Task[];
+  tasks: TaskModel[];
   onDeleteTask: (taskId: number) => void;
   onMoveTask: (taskId: number, newStatus: Status) => void;
   targetStatus: string;
