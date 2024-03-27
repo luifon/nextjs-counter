@@ -2,10 +2,10 @@
 
 export type Status = 'todo' | 'doing' | 'done';
 
-type Task = {
+type TaskModel = {
   id: number;
   title: string;
   status: Status;
 };
 
-export default Task;
+export default TaskModel;

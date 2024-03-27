@@ -5,12 +5,12 @@ import React, { useState } from 'react';
 import Head from 'next/head';
 import TaskList from '../../components/task/TaskList';
 import TaskForm from '../../components/task/TaskForm';
-import Task, { Status } from '@/models/Task.model';
+import TaskModel, { Status } from '@/models/Task.model';
 
 const Tasks: React.FC = () => {
-  const [tasks, setTasks] = useState<Task[]>([]);
+  const [tasks, setTasks] = useState<TaskModel[]>([]);
 
-  const handleAddTask = (newTask: Task) => {
+  const handleAddTask = (newTask: TaskModel) => {
     setTasks((prevTasks) => [...prevTasks, newTask]);
   };
 
@@ -31,12 +31,6 @@ const Tasks: React.FC = () => {
 
   return (
     <div className="container mx-auto">
-      <Head>
-        <title>Task Manager</title>
-        <meta name="description" content="Task Manager Application" />
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
-
       <main className="p-8">
         <TaskForm onAddTask={handleAddTask} />
         <TaskList
