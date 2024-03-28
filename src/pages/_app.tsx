@@ -1,6 +1,6 @@
 import type { AppProps } from 'next/app';
 
-import '../app/global.css';
+import '../app/globals.css';
 import Navbar from '@/components/shared/Navbar';
 
 export default function MyApp({ Component, pageProps }: AppProps) {

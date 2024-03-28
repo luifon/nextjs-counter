@@ -2,6 +2,7 @@
 
 import TaskModel from '@/models/Task.model';
 import React, { useState } from 'react';
+import Button from '../shared/Button';
 
 type TaskFormProps = {
   onAddTask: (newTask: TaskModel) => void;
@@ -14,7 +15,7 @@ const TaskForm: React.FC<TaskFormProps> = ({ onAddTask }) => {
     setTaskTitle(event.target.value);
   };
 
-  const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = (event: React.FormEvent) => {
     event.preventDefault();
     if (taskTitle.trim() !== '') {
       const newTask: TaskModel = {
@@ -38,12 +39,7 @@ const TaskForm: React.FC<TaskFormProps> = ({ onAddTask }) => {
           placeholder="Enter task title"
           className="flex-1 text-gray-900 appearance-none border border-gray-300 rounded py-2 px-4 mr-2 focus:outline-none focus:border-blue-500"
         />
-        <button
-          type="submit"
-          className="bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded focus:outline-none focus:ring focus:ring-blue-300"
-        >
-          Add
-        </button>
+        <Button onClick={handleSubmit} type="primary" text="Add"></Button>
       </form>
     </div>
   );

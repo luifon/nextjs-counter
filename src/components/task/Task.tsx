@@ -20,14 +20,13 @@ const TaskComponent: React.FC<TaskProps> = ({ task, onDelete, onMove }) => {
   };
 
   return (
-    <li className="border-b border-gray-200 py-2 flex justify-between items-center">
+    <li className="border-b border-slate-200 py-2 flex justify-between items-center">
       <span>{task.title}</span>
       <div className="space-x-2">
         {task.status === 'todo' && (
           <Button
             onClick={() => handleMove('doing')}
-            color="blue"
-            hoverColor="blue"
+            type="primary"
             text="Start"
           />
         )}
@@ -35,14 +34,12 @@ const TaskComponent: React.FC<TaskProps> = ({ task, onDelete, onMove }) => {
           <>
             <Button
               onClick={() => handleMove('done')}
-              color="green"
-              hoverColor="green"
+              type="success"
               text="Complete"
             />
             <Button
               onClick={() => handleMove('todo')}
-              color="gray"
-              hoverColor="green"
+              type="secondary"
               text="Undo"
             />
           </>
@@ -50,17 +47,11 @@ const TaskComponent: React.FC<TaskProps> = ({ task, onDelete, onMove }) => {
         {task.status === 'done' && (
           <Button
             onClick={() => handleMove('doing')}
-            color="gray"
-            hoverColor="green"
+            type="secondary"
             text="Undo"
           />
         )}
-        <Button
-          onClick={() => handleDelete()}
-          color="red"
-          hoverColor="red"
-          text="Delete"
-        />
+        <Button onClick={() => handleDelete()} type="warn" text="Delete" />
       </div>
     </li>
   );

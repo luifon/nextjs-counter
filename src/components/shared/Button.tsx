@@ -3,23 +3,14 @@
 import React from 'react';
 
 type ButtonProps = {
-  onClick: () => void;
-  color: string;
-  hoverColor: string;
+  onClick: (e: React.FormEvent) => void;
+  type: string;
   text: string;
 };
 
-const Button: React.FC<ButtonProps> = ({
-  onClick,
-  color,
-  hoverColor,
-  text,
-}) => {
+const Button: React.FC<ButtonProps> = ({ onClick, type, text }) => {
   return (
-    <button
-      onClick={onClick}
-      className={`bg-${color}-500 hover:bg-${hoverColor}-600 text-white px-3 py-1 rounded-md border border-${color}-500`}
-    >
+    <button onClick={onClick} className={`button-${type}`}>
       {text}
     </button>
   );

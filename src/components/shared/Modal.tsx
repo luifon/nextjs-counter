@@ -1,6 +1,7 @@
 // components/Modal.tsx
 
 import React from 'react';
+import Button from './Button';
 
 type ModalProps = {
   isOpen: boolean;
@@ -22,19 +23,9 @@ const ConfirmationModal: React.FC<ModalProps> = ({
       <div className="absolute top-0 left-0 w-full h-full bg-black opacity-50"></div>
       <div className="bg-white p-8 rounded-lg z-50">
         <p>{children}</p>
-        <div className="mt-4 flex justify-end">
-          <button
-            onClick={onClose}
-            className="mr-2 px-4 py-2 bg-gray-200 text-gray-800 rounded-md"
-          >
-            Cancel
-          </button>
-          <button
-            onClick={onConfirm}
-            className="px-4 py-2 bg-red-500 text-white rounded-md"
-          >
-            Delete
-          </button>
+        <div className="mt-4 flex justify-center gap-[10px]">
+          <Button onClick={onClose} type="secondary" text="Cancel"></Button>
+          <Button onClick={onConfirm} type="warn" text="Delete"></Button>
         </div>
       </div>
     </div>

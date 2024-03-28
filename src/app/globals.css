@@ -4,7 +4,7 @@
 
 :root {
   --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 255, 255, 255;
+  --background-start-rgb: 214, 219, 220;
   --background-end-rgb: 255, 255, 255;
 }
 
@@ -30,4 +30,20 @@ body {
   .text-balance {
     text-wrap: balance;
   }
+}
+
+.button-success {
+  @apply bg-green-500 hover:bg-green-600 text-white px-3 py-1 rounded-md border border-green-500;
+}
+
+.button-warn {
+  @apply bg-red-500 hover:bg-red-600 text-white px-3 py-1 rounded-md border border-red-500;
+}
+
+.button-secondary {
+  @apply bg-gray-500 hover:bg-gray-600 text-white px-3 py-1 rounded-md border border-gray-500;
+}
+
+.button-primary {
+  @apply bg-blue-500 hover:bg-blue-600 text-white px-3 py-1 rounded-md border border-blue-500;
 }
